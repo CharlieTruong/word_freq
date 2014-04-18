@@ -1,11 +1,22 @@
 $(document).ready(function(){
+
+  $('#file').change(function(){
+    if ($( '#file' )[0].files[0].type != 'text/plain'){
+      alert('Please provide a plain text file');
+    }
+    else{
+      $('input[type=submit]').removeAttr('disabled');
+    }
+  });
+
+
   $("#file_upload").submit(function(e){
     e.preventDefault();
     $('#loader').show();
     var data = new FormData();
     data.append( 'file', $( '#file' )[0].files[0] );
     var url = $("#file_upload").attr('action')
-    
+
     $.ajax({
       type: "POST",
       url: url,

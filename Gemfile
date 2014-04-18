@@ -34,6 +34,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.2'
+  gem 'capybara', '~> 2.2.1'
+  gem 'selenium-webdriver', '~> 2.41.0'
 end
 
 # Use ActiveModel has_secure_password
