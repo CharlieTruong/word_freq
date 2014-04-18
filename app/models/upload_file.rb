@@ -17,14 +17,14 @@ class UploadFile
   private
 
   def count(hash, file)
-    file.read.split(' ').each do |word|
-      word = stem(word)
+    file.read.split(/\s|\n/).each do |word|
+      word = stem(word).downcase
       hash[word].nil? ? hash[word] = 1 : hash[word] += 1
     end
     hash
   end
 
   def stem(word)
-    word.gsub(/ed[[:punct:]]*|s[[:punct:]]*|ing[[:punct:]]*/i,'')
+    word.gsub(/ed[[:punct:]]*\b|([^aeiou])s[[:punct:]]*\b|ing[[:punct:]]*\b|[[:punct:]]/i,'\1')
   end
 end

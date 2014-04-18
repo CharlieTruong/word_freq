@@ -7,9 +7,9 @@ describe UploadFile do
 
   describe '#word_count' do
     it 'returns a hash of the top 25 words and their usage count' do
-      file = double(File, read: 'the cow talks to other cows when they talked.')
+      file = double(File, read: 'cow Talks cow Cows talking strenuous.')
       File.stub(:open) { |&block| block.yield file }
-      expect(@upload_file.word_count).to eq({'cow' => 2, 'talk' => 2, 'to' => 1, 'other' => 1, 'when' => 1, 'they'=> 1, 'the' => 1})
+      expect(@upload_file.word_count).to eq({'cow' => 3, 'talk' => 2, 'strenuous' => 1})
     end
   end
 end
