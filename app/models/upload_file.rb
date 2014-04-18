@@ -17,7 +17,7 @@ class UploadFile
   private
 
   def count(hash, file)
-    file.read.split(/\s|\n/).each do |word|
+    file.read.split(/\s+|\n+/).each do |word|
       word = stem(word).downcase
       hash[word].nil? ? hash[word] = 1 : hash[word] += 1
     end
