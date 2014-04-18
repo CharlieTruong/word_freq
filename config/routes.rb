@@ -1,4 +1,6 @@
 WordFreq::Application.routes.draw do
+  root :to => 'upload_files#index'
+  match '/word_count', :to => 'upload_files#word_count', via: [:post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
