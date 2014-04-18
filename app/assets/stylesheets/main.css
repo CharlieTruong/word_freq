@@ -1,3 +1,47 @@
+html, body{
+  background-color: #C4D18B;
+  height: 100%;
+}
+
+#container{
+  width: 900px;
+  margin: 0 auto;
+  background-color: #FFF5D1;
+  height: 100%;
+}
+
+#title{
+  margin: 0;
+  text-align: center;
+  font-size: 64px;
+  padding: 1%;
+}
+
+#title_bar{
+  background-color: #C4D18B;
+  height: 1%;
+}
+
+form, h3{
+  text-align: center;
+}
+
 #graph{
   display: none;
+  width: 90%;
+  margin: 5% auto 0 auto;
+}
+
+#graph img{
+  display: block;
+  margin: 0 auto;
+}
+
+#graph h3{
+  text-align: center;
+}
+
+#graph svg{
+  display: block;
+  margin: 0 auto;
 }

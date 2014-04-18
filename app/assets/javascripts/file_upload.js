@@ -42,6 +42,11 @@ FileForm.prototype.resetGraph = function(){
   $(this.graphContainer).show();
 }
 
+FileForm.prototype.resetForm = function(){
+  this.$fileInput.val('');
+  this.$el.find('input[type=submit]').attr('disabled', 'disabled');
+}
+
 FileForm.prototype.submitFile = function(data, url){
   var self = this;
 
@@ -53,6 +58,7 @@ FileForm.prototype.submitFile = function(data, url){
     contentType: false,
     success: function(response){
       self.$loader.hide();
+      self.resetForm();
       self.graph(self.graphContainer,response);
     },
     dataType: 'json'

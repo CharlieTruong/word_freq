@@ -1,13 +1,19 @@
-<h1>Word Frequency</h1>
+<div id="container">
+  
+  <h1 id ="title">Word Frequency</h1>
+  <div id="title_bar"></div>
 
-<%= form_tag '/word_count', multipart: true ,id: 'file_upload' do %>
-  <label for="file">File to Upload</label> <%= file_field_tag "file" %>
-  <%= submit_tag 'Upload', disabled: 'disabled'%>
-<% end %>
+  <h3>Upload a Text (.txt) File and See the Top 25 Most Used Words</h3>
 
-<div id="graph">
-  <h2>Top 25 Words Used in File</h2>
-  <%= image_tag 'ajax-loader.gif', alt: 'loader', id: 'loader'%>
+  <%= form_tag '/word_count', multipart: true ,id: 'file_upload' do %>
+    <%= file_field_tag "file" %>
+    <%= submit_tag 'Upload', disabled: 'disabled'%>
+  <% end %>
+
+  <div id="graph">
+    <h3>Top 25 Words Used in File</h3>
+    <%= image_tag 'ajax-loader.gif', alt: 'loader', id: 'loader'%>
+  </div>
 </div>
 
 <%=javascript_include_tag "http://d3js.org/d3.v3.min.js"%>
