@@ -5,6 +5,9 @@
   <%= submit_tag 'Upload', disabled: 'disabled'%>
 <% end %>
 
-<div id="graph"><%= image_tag 'ajax-loader.gif', alt: 'loader', id: 'loader'%></div>
+<div id="graph">
+  <h2>Top 25 Words Used in File</h2>
+  <%= image_tag 'ajax-loader.gif', alt: 'loader', id: 'loader'%>
+</div>
 
 <%=javascript_include_tag "http://d3js.org/d3.v3.min.js"%>
