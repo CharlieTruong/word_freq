@@ -1,7 +1,12 @@
+<%=javascript_include_tag "http://d3js.org/d3.v3.min.js"%>
+
 <h1>Word Frequency</h1>
+
 <%= form_tag '/word_count', multipart: true ,id: 'file_upload' do %>
   <label for="file">File to Upload</label> <%= file_field_tag "file" %>
   <%= submit_tag 'Upload'%>
 <% end %>
+
 <%= image_tag 'ajax-loader.gif', alt: 'loader', id: 'loader'%>
+
 <div id="graph"></div>
