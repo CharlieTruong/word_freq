@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UploadFilesController, :type => :controller do
+describe UploadFilesController do
   describe "GET upload_files#index" do
     it "renders the :index template for the upload file" do
       get :index
@@ -12,8 +12,9 @@ describe UploadFilesController, :type => :controller do
     it "returns a json of the top 25 words in the uploaded text file" do
       upload_file = double(UploadFile, word_count: {'hello' => 2, 'world' => 1})
       UploadFile.stub(:new) {upload_file}
-      String.any_instance.stub(:tempfile).and_return('file')
-      post :word_count, file: 'file'
+      file = 'file'
+      file.stub(:tempfile).and_return('file')
+      post :word_count, file: file
       expect(response.body).to eq({'hello' => 2, 'world' => 1}.to_json)
     end
   end
