@@ -27,6 +27,6 @@ class UploadFile
   end
 
   def stem(word)
-    word.gsub(/ed[[:punct:]]*\b|([^aeiou])s[[:punct:]]*\b|ing[[:punct:]]*\b|[[:punct:]]/i,'\1')
+    word.gsub(/ed[[:punct:]]*\b|([^aiu])s[[:punct:]]*\b|ing[[:punct:]]*\b|[[:punct:]]/i,'\1')
   end
 end
